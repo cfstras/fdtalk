@@ -1,0 +1,42 @@
+Go (lang)
+@flipdot ppn
+
+Claus (cfstras)
+momentan: Go, C, Java, leider PHP, und etwas Sysadmin
+c@cfs.im
+
+
+* Warum eine neue Sprache?
+
+* "Systems Programming"
+
+Braucht:
+
+- Einfaches Multi-Threading
+- Concurrency (Nebenlaeufigkeit)
+- Speichersicherheit (--> kein C...)
+- Langwierige Projekte
+- 
+
+: threading: Also coder ist es nicht meine Aufgabe, zu entscheiden, wieviel threads ich brauche
+: --> leichtgewichtige threads
+: --
+: Concurrency ( != threding): man hat oft nebenlaeufige prozesse. Synchronisierung muss einfach sein.
+: --
+: Speicher: man denke an das immerwaehrende Zugunglueck OpenSSL
+: --
+: lang: code waechst. Es wird IMMER legacy geben.
+: --> coding-style muss enforced werden.
+
+* Threading
+
+* Threading
+
+.play threading.go /_1 START OMIT/,/_1 END OMIT/
+
+* Concurrency
+
+* Speicher
+
+* 
+
