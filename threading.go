@@ -6,8 +6,8 @@ import (
 	"time"
 )
 
-func _1() {
-	// _1 START OMIT
+func threading_1() {
+	// threading_1 START OMIT
 	worker := func(name string) {
 		for i := 0; i < 5; i++ {
 			time.Sleep(time.Duration(rand.Int63()%1000) * time.Millisecond)
@@ -20,9 +20,16 @@ func _1() {
 	go worker("bar")
 
 	time.Sleep(20 * time.Second)
-	// _1 END OMIT
+	// threading_1 END OMIT
+}
+
+func sync_1() {
+	// sync_1 START OMIT
+
+	// sync_1 END OMIT
 }
 
 func main() {
-	_1()
+	threading_1()
+	sync_1()
 }

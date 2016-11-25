@@ -16,27 +16,56 @@ Braucht:
 - Concurrency (Nebenlaeufigkeit)
 - Speichersicherheit (--> kein C...)
 - Langwierige Projekte
-- 
 
 : threading: Also coder ist es nicht meine Aufgabe, zu entscheiden, wieviel threads ich brauche
 : --> leichtgewichtige threads
-: --
 : Concurrency ( != threding): man hat oft nebenlaeufige prozesse. Synchronisierung muss einfach sein.
-: --
 : Speicher: man denke an das immerwaehrende Zugunglueck OpenSSL
-: --
 : lang: code waechst. Es wird IMMER legacy geben.
 : --> coding-style muss enforced werden.
+: CONVENTIONS
 
 * Threading
-
 * Threading
-
-.play threading.go /_1 START OMIT/,/_1 END OMIT/
+.play threading.go /threading_1 START OMIT/,/threading_1 END OMIT/
 
 * Concurrency
 
+* Channels: 1
+.play concurrency.go /channels_1 START OMIT/,/channels_1 END OMIT/
+
+* Channels: 2
+.play concurrency.go /channels_2 START OMIT/,/channels_2 END OMIT/
+
+* Channels
+.play concurrency.go /channels_3 START OMIT/,/channels_3 END OMIT/
+
 * Speicher
 
-* 
+* Speicher
+.play speicher.go /speicher_1 START OMIT/,/speicher_1 END OMIT/
 
+* Conventions
+
+* Conventions: Code
+- gofmt
+- goimports
+
+: tabs, aegyptisch.
+
+* Conventions: Pakete
+- gopath
+    src
+    |-- github.com
+        |-- cfstras
+            |-- mein-projekt
+        |-- somebody
+            |-- foobar
+--
+
+    import "github.com/cfstras/mein-projekt"
+    import "github.com/somebody/foobar/subprojekt"
+
+* Conventions: Aber Aber
+- was wenn ich ne bestimmte version will?
+- was wenn der package-maintainer ploetzlich boese wird?
