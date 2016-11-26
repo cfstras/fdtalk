@@ -4,18 +4,18 @@ Go (lang)
 Claus (cfstras)
 c@cfs.im
 
-
 * Warum eine neue Sprache?
+: Trinkspiel on flame
 
-* "Systems Programming" -- begriff?
+* Langwierige Projekte brauchen langweilige Sprache
+_No_surprises_
 
-Braucht / hat:
+* Brauchen / haben:
 
 - UTF-8 by default
 - Einfaches Multi-Threading
 - Concurrency (Nebenlaeufigkeit)
 - Speichersicherheit (--> kein C...)
-- Langwierige Projekte
 
 : threading: Also coder ist es nicht meine Aufgabe, zu entscheiden, wieviel threads ich brauche
 : --> leichtgewichtige threads
@@ -97,13 +97,15 @@ bash:
 - was wenn der package-maintainer ploetzlich boese wird?
 left-pad _hust_ _hust_
 
+* Legacy-Projekte
+- *Don't*depend*on*somebody*else's*infrastructure!*
+- ...
+- Mein buildbot braucht github, rubygems.org, und npmjs.com 
+- Die sind down.
+
 * Conventions: Aber Aber
 vendoring!
 
-- *Don't*depend*on*somebody*else's*infrastructure!*
-- pypi
-- rubygems
-- npmjs
 
     $ govendor add +external
     $ git add vendor/
