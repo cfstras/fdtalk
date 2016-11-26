@@ -129,6 +129,7 @@ vendoring!
 
 * Sonstiges
 - godoc
+- Compile-Geschwindigkeit
 - Cross-compiling
 - Android / iOS
 - gopherjs
