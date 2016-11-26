@@ -4,6 +4,7 @@ Go (lang)
 Claus (cfstras)
 c@cfs.im
 
+
 * Warum eine neue Sprache?
 : Trinkspiel on flame
 
@@ -26,6 +27,7 @@ c@cfs.im
 : --> coding-style muss enforced werden.
 : CONVENTIONS
 
+
 * Speicher
 
 * Speicher
@@ -33,6 +35,7 @@ c@cfs.im
 
 
 * Threading
+
 * Threading
 
 - Viele viele threads
@@ -112,11 +115,14 @@ vendoring!
     $ git add vendor/
     $ git commit -m "added dependencies."
 
+
 * Cgo
+
+* 
 
 .play cgo.go /cgo_1 START OMIT/,/cgo_1 END OMIT/
 
-* Cgo
+* 
 
 .play cgo.go /cgo_2 START OMIT/,/cgo_2 END OMIT/
 
