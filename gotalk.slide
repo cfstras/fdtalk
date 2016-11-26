@@ -2,7 +2,6 @@ Go (lang)
 @flipdot ppn
 
 Claus (cfstras)
-momentan: Go, C, Java, leider PHP, und etwas Sysadmin
 c@cfs.im
 
 
@@ -10,8 +9,9 @@ c@cfs.im
 
 * "Systems Programming"
 
-Braucht:
+Braucht / hat:
 
+- UTF-8 by default
 - Einfaches Multi-Threading
 - Concurrency (Nebenlaeufigkeit)
 - Speichersicherheit (--> kein C...)
@@ -27,7 +27,21 @@ Braucht:
 
 * Threading
 * Threading
+
+- Viele viele threads
+
 .play threading.go /threading_1 START OMIT/,/threading_1 END OMIT/
+
+- sleep? Baeaeaeh!
+- synchronisieren? wie?
+
+* Threading: sync
+
+.play sync.go /sync_1 START OMIT/,/sync_1 END OMIT/
+
+* Threading: sync 2
+
+.play sync2.go /sync_2 START OMIT/,/sync_2 END OMIT/
 
 * Concurrency
 
@@ -63,9 +77,32 @@ Braucht:
             |-- foobar
 --
 
+test.go:
+
     import "github.com/cfstras/mein-projekt"
     import "github.com/somebody/foobar/subprojekt"
+--
+
+bash:
+
+    $ go get go get github.com/cfstras/wiki-api
+    $ go get github.com/cfstras/wiki-api .
 
 * Conventions: Aber Aber
 - was wenn ich ne bestimmte version will?
 - was wenn der package-maintainer ploetzlich boese wird?
+left-pad _hust_ _hust_
+
+* Conventions: Aber Aber
+vendoring!
+
+- *Don't*depend*on*somebody*else's*infrastructure!*
+- pypi
+- rubygems
+- npmjs
+
+    $ govendor add +external
+    $ git add vendor/
+    $ git commit -m "added dependencies."
+
+* Jetzt faellt mir nix mehr ein
