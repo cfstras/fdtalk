@@ -33,12 +33,16 @@ c@cfs.im
 * Speicher
 .play speicher.go /speicher_1 START OMIT/,/speicher_1 END OMIT/
 
+- Structs copy / reference
+
+* Dynamische Arrays
+.play arrays.go /arrays_1 START OMIT/,/arrays_1 END OMIT/
 
 * Threading
 
 * Threading
 
-- Viele viele threads
+- Viele viele goroutinen
 
 .play threading.go /threading_1 START OMIT/,/threading_1 END OMIT/
 
@@ -52,6 +56,8 @@ c@cfs.im
 * Threading: sync 2
 
 .play sync2.go /sync_2 START OMIT/,/sync_2 END OMIT/
+
+- deadlocks
 
 * Concurrency
 
