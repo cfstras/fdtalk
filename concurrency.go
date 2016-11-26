@@ -36,7 +36,6 @@ func channels_1() {
 	}
 	// channels_1 END OMIT
 	// channels_2 START OMIT
-
 	compresser := func(datas <-chan F, compresseds chan<- F) {
 		for f := range datas {
 			log.Println("compressing", f.Path)
@@ -56,6 +55,8 @@ func channels_1() {
 			compresseds <- F{f.Path, out.Bytes()}
 		}
 	}
+	// channels_2 END OMIT
+	// channels_3 START OMIT
 	saver := func(compresseds <-chan F) {
 		for f := range compresseds {
 			log.Println("'saving'", f.Path, "", len(f.Data)/(1<<20), "MB")
@@ -66,8 +67,9 @@ func channels_1() {
 		// nop
 		wg.Done()
 	}
-	// channels_2 END OMIT
-	// channels_3 START OMIT
+	// channels_3 END OMIT
+	// channels_4 START OMIT
+
 	paths := make(chan string, 16)
 	datas := make(chan F, 16)
 	compresseds := make(chan F, 16)
@@ -88,7 +90,7 @@ func channels_1() {
 	})
 	close(paths)
 	wg.Wait()
-	// channels_3 END OMIT
+	// channels_4 END OMIT
 }
 
 func main() {

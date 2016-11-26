@@ -7,7 +7,7 @@ c@cfs.im
 
 * Warum eine neue Sprache?
 
-* "Systems Programming"
+* "Systems Programming" -- begriff?
 
 Braucht / hat:
 
@@ -24,6 +24,12 @@ Braucht / hat:
 : lang: code waechst. Es wird IMMER legacy geben.
 : --> coding-style muss enforced werden.
 : CONVENTIONS
+
+* Speicher
+
+* Speicher
+.play speicher.go /speicher_1 START OMIT/,/speicher_1 END OMIT/
+
 
 * Threading
 * Threading
@@ -51,13 +57,11 @@ Braucht / hat:
 * Channels: 2
 .play concurrency.go /channels_2 START OMIT/,/channels_2 END OMIT/
 
-* Channels
+* Channels: 3
 .play concurrency.go /channels_3 START OMIT/,/channels_3 END OMIT/
 
-* Speicher
-
-* Speicher
-.play speicher.go /speicher_1 START OMIT/,/speicher_1 END OMIT/
+* Channels: 4
+.play concurrency.go /channels_4 START OMIT/,/channels_4 END OMIT/
 
 * Conventions
 
@@ -85,8 +89,8 @@ test.go:
 
 bash:
 
-    $ go get go get github.com/cfstras/wiki-api
-    $ go get github.com/cfstras/wiki-api .
+    $ go get github.com/cfstras/wiki-api
+    $ github.com/cfstras/wiki-api .
 
 * Conventions: Aber Aber
 - was wenn ich ne bestimmte version will?
