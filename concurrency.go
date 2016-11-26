@@ -3,7 +3,6 @@ package main
 import (
 	"bytes"
 	"compress/gzip"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
@@ -27,7 +26,7 @@ func channels_1() {
 			if err != nil {
 				log.Println("file", path, ":", err)
 			} else {
-				fmt.Println("read", path, "", len(b)/(1<<20), "MB")
+				log.Println("read", path, "", len(b)/(1<<20), "MB")
 				datas <- F{path, b}
 				wg.Add(1)
 			}
@@ -40,7 +39,7 @@ func channels_1() {
 
 	compresser := func(datas <-chan F, compresseds chan<- F) {
 		for f := range datas {
-			fmt.Println("compressing", f.Path)
+			log.Println("compressing", f.Path)
 			out := bytes.NewBuffer(nil)
 			w := gzip.NewWriter(out)
 
@@ -59,7 +58,7 @@ func channels_1() {
 	}
 	saver := func(compresseds <-chan F) {
 		for f := range compresseds {
-			fmt.Println("'saving'", f.Path, "", len(f.Data)/(1<<20), "MB")
+			log.Println("'saving'", f.Path, "", len(f.Data)/(1<<20), "MB")
 
 			// mark done
 			wg.Done()
@@ -83,7 +82,7 @@ func channels_1() {
 		if info.IsDir() {
 			return nil
 		}
-		fmt.Println("queueing", path)
+		log.Println("queueing", path)
 		paths <- path
 		return err
 	})

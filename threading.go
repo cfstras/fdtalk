@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"math/rand"
 	"time"
 )
@@ -11,9 +11,9 @@ func threading_1() {
 	worker := func(name string) {
 		for i := 0; i < 5; i++ {
 			time.Sleep(time.Duration(rand.Int63()%1000) * time.Millisecond)
-			fmt.Println("hello from", name)
+			log.Println("hello from", name)
 		}
-		fmt.Println(name, "done")
+		log.Println(name, "done")
 	}
 
 	go worker("foo")
@@ -22,14 +22,6 @@ func threading_1() {
 	time.Sleep(20 * time.Second)
 	// threading_1 END OMIT
 }
-
-func sync_1() {
-	// sync_1 START OMIT
-
-	// sync_1 END OMIT
-}
-
 func main() {
 	threading_1()
-	sync_1()
 }

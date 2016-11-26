@@ -1,6 +1,6 @@
 package main
 
-import "fmt"
+import "log"
 
 func speicher_1() {
 	// speicher_1 START OMIT
@@ -13,7 +13,7 @@ func speicher_1() {
 	}
 
 	b := x()
-	fmt.Println(b.Data)
+	log.Println(b.Data)
 	// speicher_1 END OMIT
 }
 
