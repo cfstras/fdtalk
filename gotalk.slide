@@ -8,7 +8,8 @@ c@cfs.im
 : Trinkspiel on flame
 
 * Langwierige Projekte brauchen langweilige Sprache
-_No_surprises_
+- No surprises
+- Visual clutter
 
 * Brauchen / haben:
 
@@ -110,5 +111,20 @@ vendoring!
     $ govendor add +external
     $ git add vendor/
     $ git commit -m "added dependencies."
+
+* Cgo
+
+.play cgo.go /cgo_1 START OMIT/,/cgo_1 END OMIT/
+
+* Cgo
+
+.play cgo.go /cgo_2 START OMIT/,/cgo_2 END OMIT/
+
+
+* Sonstiges
+- godoc
+- Cross-compiling
+- Android / iOS
+- gopherjs
 
 * Jetzt faellt mir nix mehr ein
